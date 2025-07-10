@@ -1,3 +1,4 @@
+require('dotenv').config();
 const axios = require("axios");
 const User = require("../models/User");
 const Notification = require("../models/Notifications"); 
@@ -10,7 +11,7 @@ const fs = require('fs');
 const MY_PROJECT_ID = "agnos-575eb"; 
 const FCM_ENDPOINT = `https://fcm.googleapis.com/v1/projects/${MY_PROJECT_ID}/messages:send`;
 
-const SERVICE_ACCOUNT_KEY_FILE = './my-service-account.json';
+const SERVICE_ACCOUNT_KEY_FILE = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 
 async function getAccessToken() {
