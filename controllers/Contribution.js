@@ -685,11 +685,10 @@ exports.addContribution = async (req, res) => {
 const MY_PROJECT_ID = "agnos-575eb";
 const FCM_ENDPOINT = `https://fcm.googleapis.com/v1/projects/${MY_PROJECT_ID}/messages:send`;
 
-const SERVICE_ACCOUNT_KEY_FILE = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+//const SERVICE_ACCOUNT_KEY_FILE = JSON.parse(process.env.GOOGLE_CREDENTIALS);
 
 async function getAccessToken() {
   const auth = new GoogleAuth({
-    keyFile: SERVICE_ACCOUNT_KEY_FILE,
     scopes: ["https://www.googleapis.com/auth/firebase.messaging"],
   });
 
