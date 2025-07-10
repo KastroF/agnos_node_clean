@@ -1,0 +1,3 @@
+echo ".env" >> .gitignore
+echo "my-service-account.json" >> .gitignore
+node_modules
